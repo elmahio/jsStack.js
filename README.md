@@ -5,7 +5,7 @@
 A simple and easy jQuery plugin for highlighting JavaScript stack traces
 
 #### Demo
-![jsStack.js - demo](example.jpg)
+![jsStack.js - demo](example.png)
 
 #### Initialization
 ```
