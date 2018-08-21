@@ -1,4 +1,4 @@
-# stacktrace.js
+# jsStack.js
 ![version](https://img.shields.io/badge/Latest%20version-1.0.0-1abc9c.svg?style=flat-square) 
 ![license](https://img.shields.io/hexpm/l/plug.svg?style=flat-square)
 
