@@ -25,7 +25,7 @@
             var chrome = /^\s*at (?:(?:(?:Anonymous function)?|((?:\[object object\])?\S+(?: \[as \S+\])?)) )?\(?((?:file|http|https):.*?):(\d+)(?::(\d+))?\)?\s*$/i,
                 gecko = /^(?:\s*([^@]*)(?:\((.*?)\))?@)?(\S.*?):(\d+)(?::(\d+))?\s*$/i,
                 node  = /^\s*at (?:((?:\[object object\])?\S+(?: \[as \S+\])?) )?\(?(.*?):(\d+)(?::(\d+))?\)?\s*$/i,
-                other = /^\s*at (?:(?:(?:Anonymous function)?|((?:\[object object\])?\S+(?: \[as \S+\])?)) )?\(?((?:).*?)?\)?\s*$/i;
+                other = /^\s*at (?:(?:(?:Anonymous function)?|((?:\[object object\])?\S+(?: \[as \S+\])?)) )\(?((?:).*?)?\)?\s*$/i;
             var stacktrace = escapeHtml($(this).text()),
                 lines = stacktrace.split('\n'),
                 stack = '',
@@ -78,10 +78,8 @@
                     line = template_line(lines[i], element);
                 } else if ((parts = other.exec(lines[i]))) {
                     element = {
-                        'file': parts[3],
-                        'methodName': parts[1] || UNKNOWN_FUNCTION,
-                        'lineNumber': +parts[4],
-                        'column': parts[5] ? +parts[5] : null
+                        'file': parts[2],
+                        'methodName': parts[1] || UNKNOWN_FUNCTION
                     };
                     line = template_line(lines[i], element);
                 } else {
