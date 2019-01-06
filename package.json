@@ -1,5 +1,5 @@
 {
-  "name": "jsstack",
+  "name": "jsstack.js",
   "version": "1.0.0",
   "description": "A simple and easy jQuery plugin for highlighting JavaScript stack traces",
   "main": "jsStack.js",
