@@ -1,5 +1,5 @@
 # jsStack.js
-[![npm](https://img.shields.io/npm/v/jsstack.js.svg)](https://img.shields.io/npm/v/jsstack.js.svg)
+[![npm](https://img.shields.io/npm/v/jsstack.js.svg)](https://www.npmjs.com/package/jsstack.js)
 ![license](https://img.shields.io/hexpm/l/plug.svg?style=flat-square)
 
 A simple and easy jQuery plugin for highlighting JavaScript stack traces
