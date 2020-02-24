@@ -1,5 +1,5 @@
 /*!
- * jsStack v1.0.0
+ * jsStack v1.0.1
  * A simple and easy jQuery plugin for highlighting JavaScript stack traces
  * License : Apache 2
  * Author : Stanescu Eduard-Dan (https://elmah.io)
@@ -36,6 +36,7 @@
                 line = line.replace(element.file, '<span class="'+ settings.file +'">' + element.file + '</span>')
                     .replace(element.methodName + ' (', '<span class="'+ settings.method +'">' + element.methodName + '</span> (')
                     .replace(':' + element.lineNumber + ':' + element.column, ':<span class="'+ settings.line +'">' + element.lineNumber + '</span>:<span class="'+ settings.column +'">' + element.column + '</span>');
+                line = line.replace(/&lt;/g, '<span>&lt;</span>').replace(/&gt;/g, '<span>&gt;</span>');
 
                 return line;
             }
@@ -83,7 +84,7 @@
                     };
                     line = template_line(lines[i], element);
                 } else {
-                    line = lines[i];
+                    line = lines[i].replace(/&lt;/g, '<span>&lt;</span>').replace(/&gt;/g, '<span>&gt;</span>');
                 }
 
                 if (lines.length - 1 == i) {
