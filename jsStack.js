@@ -1,5 +1,5 @@
 /*!
- * jsStack v1.0.1
+ * jsStack v2.0.0
  * A simple and easy library for highlighting JavaScript stack traces
  * License: Apache 2
  * Author: https://elmah.io
