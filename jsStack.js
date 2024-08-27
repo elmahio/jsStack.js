@@ -4,7 +4,19 @@
  * License: Apache 2
  * Author: https://elmah.io
  */
-(function() {
+
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define([], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        // Node, CommonJS-like
+        module.exports = factory();
+    } else {
+        // Browser globals (root is window)
+        root.jsStack = factory();
+    }
+}(typeof self !== 'undefined' ? self : this, function () {
     'use strict';
 
     function jsStack(element, options) {
@@ -101,8 +113,11 @@
     }
 
     // Expose the plugin globally
-    window.jsStack = function(selector, options) {
+    function jsStackLibrary(selector, options) {
         var elements = document.querySelectorAll(selector);
         initJsStack(Array.from(elements), options);
-    };
-})();
+    }
+
+    return jsStackLibrary;
+
+}));
